@@ -8,8 +8,8 @@ print(result)
 
 def get_key(key):
     r = requests.get('http://127.0.0.1:3000/get/{}'.format(key))
-    r = str(key.content)
-    r = key.split('\'')[1]
+    r = str(r.content)
+    r = r.split('\'')[1]
     return r
 
 def get_key_value(key, value):

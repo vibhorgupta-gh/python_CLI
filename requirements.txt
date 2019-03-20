@@ -8,6 +8,7 @@ Jinja2==2.10
 # Editable Git install with no remote (kv==0.1)
 -e /Users/shinigami/Desktop/playground/kv
 MarkupSafe==1.1.1
+pyfiglet==0.8.post1
 redis==3.2.1
 requests==2.21.0
 urllib3==1.24.1
