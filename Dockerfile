@@ -1,13 +1,11 @@
-FROM ubuntu:latest
+FROM alpine:3.6
 
-RUN apt-get update -y && \
-    apt-get install -y python3 python3-dev python3-pip
+RUN apk add --no-cache python3 python3-dev
 
 COPY . /app
 WORKDIR /app
 
-RUN pip3 install -r requirements.txt
+RUN pip3 install --editable .
 RUN python3 setup.py install
 
-ENTRYPOINT ["python3"]
-CMD ["server.py"]
+CMD python3 server.py
