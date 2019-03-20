@@ -10,6 +10,6 @@ setup(
     ],
     entry_points='''
         [console_scripts]
-        store=app:main
+        store=cli:cli
     ''',
 )

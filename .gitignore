@@ -1,4 +1,7 @@
 env/*
-app.pyc
+cli.pyc
 kv.egg-info/*
 .DS_Store
+build/*
+dist/*
+__pycache__/*
