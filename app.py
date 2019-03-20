@@ -4,6 +4,12 @@ import redis
 pool = redis.ConnectionPool(host='localhost', port=6379, db=0)
 r = redis.Redis(connection_pool=pool)
 
+def check_for_update(key, current):
+    if r.get(current) == r.get(key):
+        return False
+    else:
+        return True
+
 @click.group()
 def main():
     '''
@@ -32,10 +38,14 @@ def get(key):
 @click.argument('key')
 def watch(key):
     """ Watches the argument key """
-    if not r.get(key):
+    current = key
+    if not r.get(current):
         print("\n\nThis key doesn\'t exist.\nSee store --help for more info on setting keys.\n\n" )
     else:
         print("Watching key " + key + " for any changes in value")
         while(True):
+            is_updated = check_for_update(key, current)
+            if is_updated:
+                new_val = r.get(current)
+                print("New value of " + str(current) + ": " + str(new_val))
             continue
-        pass
