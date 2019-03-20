@@ -6,6 +6,7 @@ setup(
     py_modules=['app'],
     install_requires=[
         'Click',
+        'Redis',
     ],
     entry_points='''
         [console_scripts]
