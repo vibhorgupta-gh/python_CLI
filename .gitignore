@@ -1,0 +1,3 @@
+env/*
+app.pyc
+kv.egg-info/*
