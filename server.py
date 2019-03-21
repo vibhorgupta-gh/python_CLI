@@ -9,13 +9,12 @@ r = redis.Redis(connection_pool=pool)
 
 @app.route('/get/<key>', methods=['GET'])
 def get(key):
-    print(type(key))
+    result = ''
     key = str(key)
-    if r.get(key):
+    if r.exists(key) != 0:
         result = r.get(key)
     else:
-        result = False
-    print(str(result) + "\n")
+        result = 'false'
     return result
 
 @app.route('/set/<key>:<value>', methods=['GET'])
@@ -23,7 +22,7 @@ def set(key, value):
     key = str(key)
     value = str(value)
     r.set(key, value)
-    if r.get(key):
+    if r.exists(key) != 0:
         print(str(key) + " " + str(value))
     else:
         print('nada')

@@ -39,10 +39,10 @@ def get(key):
     """ Fetches the argument key value pair """
     key = str(key)
     r = get_key(key)
-    if not r:
-        print("\n\nThis key doesn\'t exist.\nSee store --help for more info on setting keys.\n\n" )
+    if r == 'false':
+        click.echo("\n\nThis key doesn\'t exist.\nSee store --help for more info on setting keys.\n\n")
     else:
-        print("\n\nSuccessfully fetched key: " + key + " having value: " + str(r) + "\n\n")
+        click.echo("\n\nSuccessfully fetched key: " + key + " having value: " + str(r) + "\n\n")
 
 @cli.command()
 @click.argument('key')
@@ -52,7 +52,7 @@ def set(key, value):
     key = str(key)
     value = str(value)
     r = get_key_value(key, value)
-    print("\n\nSuccessfully set key: " + key + " with value: " + str(r) + "\n\n")
+    click.echo("\n\nSuccessfully set key: " + key + " with value: " + str(r) + "\n\n")
 
 @cli.command()
 @click.argument('key')
@@ -61,8 +61,8 @@ def watch(key):
     key = str(key)
     current = key
     current_val = get_key(current)
-    if not current_val:
-        print("\n\nThis key doesn\'t exist.\nSee store --help for more info on setting keys.\n\n" )
+    if current_val == 'false':
+        click.echo("\n\nThis key doesn\'t exist.\nSee store --help for more info on setting keys.\n\n")
     else:
         print("Watching key " + key + " for any changes in value")
         while(True):
