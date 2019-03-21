@@ -20,13 +20,13 @@ def get(key):
 @app.route('/set/<key>:<value>', methods=['GET'])
 def set(key, value):
     key = str(key)
-    value = str(value)
+    result = ''
     r.set(key, value)
     if r.exists(key) != 0:
-        print(str(key) + " " + str(value))
+        result = str(value)
     else:
         print('nada')
-    return value
+    return result
 
 
 if __name__ == "__main__":

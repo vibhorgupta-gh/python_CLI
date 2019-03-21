@@ -1,10 +1,11 @@
 import unittest
 import click
+from time import sleep
 from click.testing import CliRunner
 from cli import get, set, watch, get_key, get_key_value, check_for_update
 
 
-class TestMethods(unittest.TestCase):
+class TestCLIMethods(unittest.TestCase):
 
     def test_get_key(self):
         expected = '5'
@@ -48,7 +49,6 @@ class TestMethods(unittest.TestCase):
         result = runner.invoke(watch, ['key'])
         assert result.exit_code == 0
         assert "This key doesn\'t exist.\nSee store --help for more info on setting keys." in result.output
-
 
 if __name__ == '__main__':
     unittest.main()

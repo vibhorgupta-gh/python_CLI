@@ -64,7 +64,7 @@ def watch(key):
     if current_val == 'false':
         click.echo("\n\nThis key doesn\'t exist.\nSee store --help for more info on setting keys.\n\n")
     else:
-        print("Watching key " + key + " for any changes in value")
+        click.echo("Watching key " + key + " for any changes in value")
         while(True):
             is_updated = check_for_update(key, current)
             if is_updated:

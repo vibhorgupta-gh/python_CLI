@@ -5,3 +5,6 @@ kv.egg-info/*
 build/*
 dist/*
 __pycache__/*
+tests/__pycache__/*
+.coverage
+.pytest_cache/*
