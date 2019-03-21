@@ -8,9 +8,8 @@ Flask==1.0.2
 idna==2.8
 itsdangerous==1.1.0
 Jinja2==2.10
--e git+https://github.com/VibhorCodecianGupta/python_CLI.git@3eecdfcc2cb82b35deddf6bbcbcf4286226464e9#egg=kv
 MarkupSafe==1.1.1
-more-itertools==6.0.0
+more-itertools==5.0.0
 pluggy==0.9.0
 py==1.8.0
 pyfiglet==0.8.post1

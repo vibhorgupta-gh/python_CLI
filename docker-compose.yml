@@ -1,0 +1,17 @@
+version: '2.2'
+services:
+    web:
+        build: .
+        ports:
+          - "0.0.0.0:3000:3000"
+        volumes:
+          - .:/app
+        depends_on:
+          - redis
+    redis:
+        image: redis:alpine
+        restart: always
+        expose:
+          - "6379"
+        ports:
+          - "6379:6379"

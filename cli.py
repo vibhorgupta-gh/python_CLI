@@ -7,13 +7,13 @@ result = pyfiglet.figlet_format('-- Store --')
 print(result)
 
 def get_key(key):
-    r = requests.get('http://127.0.0.1:3000/get/{}'.format(key))
+    r = requests.get('http://0.0.0.0:3000/get/{}'.format(key))
     r = str(r.content)
     r = r.split('\'')[1]
     return r
 
 def get_key_value(key, value):
-    r = requests.get('http://127.0.0.1:3000/set/{}:{}'.format(key, value))
+    r = requests.get('http://0.0.0.0:3000/set/{}:{}'.format(key, value))
     r = str(r.content)
     r = r.split('\'')[1]
     return r
