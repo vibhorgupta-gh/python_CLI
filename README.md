@@ -1,9 +1,9 @@
-##STORE
+## STORE
 A CLI tool for managing key-value pairs
 
 Store is a CLI tool built with [Python](https://docs.python.org/3/) for scripting and server and [Redis](https://redis.io/) for data storage used to store, retrieve and watch data stored in the form of key value pairs.
 
-###Installation
+### Installation
 
 - Clone this repository, run
   ```
@@ -25,7 +25,7 @@ Store is a CLI tool built with [Python](https://docs.python.org/3/) for scriptin
     pip install --editable .
     ```
 
-###Setup
+### Setup
 
  This tool is intended to run as a server/daemon, hence `flask` endpoints are used to call the desired data instead of the CLI tool directly querying `redis`.
  Run the following command to start the server.
@@ -33,7 +33,7 @@ Store is a CLI tool built with [Python](https://docs.python.org/3/) for scriptin
    python3 server.py
    ```
 
-###CLI Usage
+### CLI Usage
 
 Fire up another terminal and you are ready to go! The CLI offers the following commands to play with:
 
@@ -71,7 +71,7 @@ store watch <key>
   pytest tests/test_cli.py --cov=cli
   pytest tests/test_server.py --cov=server
   ```
-###Docker
+### Docker
 
 This project is docker-friendly, and has a `Dockerfile` and a `docker-compose.yml`. To run a docker instance of the application, run
   ```
