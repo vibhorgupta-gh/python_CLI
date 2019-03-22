@@ -11,6 +11,9 @@ Store is a CLI tool built with [Python](https://docs.python.org/3/) for scriptin
   ```
 
 - Change directory into project root
+  ```
+  cd kv/
+  ```
 
 - For installing python dependencies, run
   ```

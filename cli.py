@@ -42,7 +42,7 @@ def get(key):
     if r == 'false':
         click.echo("\n\nThis key doesn\'t exist.\nSee store --help for more info on setting keys.\n\n")
     else:
-        click.echo("\n\nSuccessfully fetched key: " + key + " having value: " + str(r) + "\n\n")
+        click.echo("\n\nSuccessfully fetched key: " + key + " with value: " + str(r) + "\n\n")
 
 @cli.command()
 @click.argument('key')
